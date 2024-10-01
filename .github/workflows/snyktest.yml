@@ -20,6 +20,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
+      # Install Maven
+      - name: Set up Maven
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
       - name: Set up Snyk CLI to check for security issues
         run: |
          npm install snyk -g
